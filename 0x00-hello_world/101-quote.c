@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<unistd.h>
 /**
  * main -a program that prints a message
  * Return:1 succeed
