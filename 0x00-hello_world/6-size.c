@@ -3,7 +3,8 @@
 /**
  * main - program to print sizes
  *
- * Return:0(succeed)
+ * Return: Always 0(succeed)
+ *
  */
 int main(void)
 {
