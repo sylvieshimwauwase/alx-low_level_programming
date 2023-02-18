@@ -11,9 +11,9 @@ int main(void)
 
 	while (alp <= 'z')
 	{
-		puchar(alp);
+		putchar(alp);
 		alp++;
+		putchar('\n');
 	}
-	putchar('\n');
-	return (0);
+		return (0);
 }
