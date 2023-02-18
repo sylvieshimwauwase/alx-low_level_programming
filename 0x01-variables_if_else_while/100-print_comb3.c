@@ -15,8 +15,10 @@ int main(void)
 		{
 			putchar((n1 % 10) + '0');
 			putchar((n2 % 10) + '0');
+
 			if (n1 == 9 && n2 == 9)
 				continue;
+
 			putchar(',');
 			putchar(' ');
 		}
