@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - prints if a number is greater than 5, zero ,or not
+ * main - program will assign a random number to the variable
  *
  * Return: Always 0
  */
