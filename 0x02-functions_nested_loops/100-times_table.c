@@ -11,14 +11,14 @@ void print_times_table(int n)
 
 	if (n >= 0 && n <= 15)
 	{
-		for (i = 0; i <= 15; i++)
+		for (i = 0; i <= n; i++)
 		{
 			_putchar('0');
 
-			for (mul = 1; mul <= i; mul++)
+			for (mul = 1; mul <= n; mul++)
 			{
 				_putchar(',');
-				_putchar(',');
+				_putchar(' ');
 
 				product = i * mul;
 				if (product <= 99)
