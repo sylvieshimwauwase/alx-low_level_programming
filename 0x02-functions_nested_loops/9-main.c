@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * main - check
+ * main - check the code
  *
- * Return:always 0
+ * Return: Always 0.
  */
 int main(void)
 {
-	print_alphabet();
+	times_table();
 	return (0);
 }
