@@ -19,6 +19,6 @@ int main(void)
 			large = num / a;
 		}
 	}
-	printf("%ld", large);
+	printf("%ld\n", large);
 	return (0);
 }
