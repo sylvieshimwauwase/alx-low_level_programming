@@ -23,5 +23,6 @@ int main(void)
 		num2 = sum;
 	}
 	printf("%.0f\n", total);
+
 	return (0);
 }
