@@ -2,9 +2,8 @@
 
 /**
  * swap_int - swap integers
- * @a: integer 1
- * @b: integer 2
- * Return: always 0
+ * @a: integer 
+ * @b: integer 
  */
 void swap_int(int *a, int *b)
 {
