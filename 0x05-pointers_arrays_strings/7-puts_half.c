@@ -3,6 +3,7 @@
 /**
  * puts_half - prints half of a string
  * @str: string
+ * Return: length
  */
 void puts_half(char *str)
 {
@@ -15,4 +16,5 @@ void puts_half(char *str)
 		_putchar(str[a]);
 	}
 	_putchar('\n');
+	return (len);
 }
