@@ -2,6 +2,7 @@
 
 /**
  * reset_to_98 - updates the value of a pointer
+ * @n: number
  *
  * Return: always 0
  */
