@@ -2,8 +2,8 @@
 
 /**
  * print_array - prints array of integers
- * @a:int a
- * @n:int n
+ * @a:array
+ * @n:number
  */
 void print_array(int *a, int n)
 {
