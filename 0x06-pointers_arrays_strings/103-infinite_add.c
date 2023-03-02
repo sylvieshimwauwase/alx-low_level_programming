@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+#include <stdio.h>
 
 /**
  * *infinite_add - adds two numbers
@@ -46,6 +48,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (dig == size_r)
 		return (0);
 	*(r + dig) = '\0';
-	rev_string(r);
 	return (0);
 }
