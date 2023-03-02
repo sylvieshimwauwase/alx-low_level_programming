@@ -5,19 +5,31 @@
  * @str:string
  * Return:capital strings
  */
-char *cap_string(char *)
+char *cap_string(char *str)
 {
-	int len = strlen(str);
 	int a;
 
-	str[0] = toupper(str[0]);
-
-	for (a = 1; a < len; a++)
+	a = 0;
+	while (str[a])
 	{
-		if ((str[a - 1] == ' ' || str[a - 1] == '\t' || str[a - 1] == '\n' || str[a - 1] == ',' || str[a - 1] == ';' || str[a - 1] == '.' || str[a - 1] == '!' || str[a - 1] == '?' || str[a - 1] == '"' || str[a - 1] == '(' || str[a - 1] == ')' || str[a - 1] == '{' || str[a - 1] == '}') && isalpha(str[a]))
-		{
-			str[a] = toupper(str[a]);
-		}
+		while (!(str[a] >= 'a' && str[a] <= 'z'))
+			a++;
+		if (str[a - 1] == ' ' ||
+				str[a - 1] == '\t' ||
+				str[a - 1] == '\n' ||
+				str[a - 1] == ',' ||
+				str[a - 1] == ';' ||
+				str[a - 1] == '.' ||
+				str[a - 1] == '!' ||
+				str[a - 1] == '?' ||
+				str[a - 1] == '"' ||
+				str[a - 1] == '(' ||
+				str[a - 1] == ')' ||
+				str[a - 1] == '{' ||
+				str[a - 1] == '}' ||
+				a == 0)
+			str[a] -= 32;
+		a++;
 	}
 	return (str);
 }
