@@ -11,8 +11,13 @@ int _atoi(char *s)
 {
 	int sign = 1;
 	int result = 0;
-	
-	while (*s == ' ' || *s == '\t' || *s == '\n' || *s == '\r' || *s == '\f' || *s == '\v')
+
+	while (*s == ' '
+			|| *s == '\t'
+			|| *s == '\n'
+			|| *s == '\r'
+			|| *s == '\f'
+			|| *s == '\v')
 		s++;
 	if (*s == '-' || *s == '+')
 	{
