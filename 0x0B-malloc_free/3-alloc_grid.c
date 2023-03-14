@@ -3,6 +3,10 @@
 #include <stddef.h>
 
 /**
+ * **alloc_grid - returns a pointer to 2 dimensional array
+ * @width:width of array
+ * @height:heigth of array
+ * Return:dimensional array
  */
 int **alloc_grid(int width, int height)
 {
