@@ -27,7 +27,7 @@ int wordss(char *s)
 /**
  * **strtow - function that splits string into words
  * @str:string to be splitted
- * @Return:splitted word
+ * Return:splitted word
  */
 char **strtow(char *str)
 {
@@ -45,7 +45,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i <= len; i++)
 	{
-		if (str[i] == ' '|| str[i] == '\0')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
 			if (c)
 			{
@@ -56,7 +56,7 @@ char **strtow(char *str)
 				while (start < end)
 					*temp++ = str[start++];
 				*temp = '\0';
-				matrix[k] = temp -c;
+				matrix[k] = temp - c;
 				k++;
 				c = 0;
 			}
