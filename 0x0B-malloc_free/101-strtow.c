@@ -3,53 +3,67 @@
 #include <string.h>
 
 /**
+ * wordss - counts no of words
+ * @s:pionter to string
+ * Return: no of string
+ */
+int wordss(char *s)
+{
+	int flag = 0, c, w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
+	{
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
+		{
+			flag = 1;
+			w++;
+		}
+	}
+	return (w);
+}
+
+/**
  * **strtow - function that splits string into words
  * @str:string to be splitted
  * @Return:splitted word
  */
 char **strtow(char *str)
 {
-	int num_words = 0, word_index = 0, word_length = 0, word_start;
-	long unsigned int i;
-	int j;
-	char **words, *word;
+	char **matrix, *temp;
+	int i, k = 0, len = 0, words, c = 0,  start, end;
 
-	if (str == NULL || strlen(str) == 0)
+	while (*(str + len))
+		len++;
+	words = wordss(str);
+	if (words == 0)
 		return (NULL);
-	for (i = 0; i < strlen(str); i++)
-	{
-		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-			num_words++;
-	}
-	words = (char **)malloc((num_words + 1) * sizeof(char *));
-	if (words == NULL)
+	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+
+	if (matrix == NULL)
 		return (NULL);
-	for ( i = 0; i < strlen(str); i++)
+	for (i = 0; i <= len; i++)
 	{
-		if (str[i] != ' ')
+		if (str[i] == ' '|| str[i] == '\0')
 		{
-			word_start = i;
-			while (str[i] != ' ' && str[i] != '\0')
+			if (c)
 			{
-				i++;
-				word_length++;
+				end = i;
+				temp = (char *) malloc(sizeof(char) * (c + 1));
+				if (temp == NULL)
+					return (NULL);
+				while (start < end)
+					*temp++ = str[start++];
+				*temp = '\0';
+				matrix[k] = temp -c;
+				k++;
+				c = 0;
 			}
-			word = (char *)malloc((word_length + 1) * sizeof(char));
-			if (word == NULL)
-			{
-				for (j = 0; j < word_index; j++)
-				{
-					free(words[j]);
-				}
-				free(words);
-				return (NULL);
-			}
-			strncpy(word, str + word_start, word_length);
-			word[word_length] = '\0';
-			words[word_index] = word;
-			word_index++;
 		}
+		else if (c == 0)
+			start = i;
 	}
-	words[word_index] = NULL;
-	return (words);
+	matrix[k] = NULL;
+	return (matrix);
 }
