@@ -1,12 +1,6 @@
-#include <stdio.h>
+#ifndef FUNCTION_LIKE_MACRO_H
+#define FUNCTION_LIKE_MACRO_H
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
-/** main - function that computes absolute value
- * Return:always 0 on success
- */
-int main(void)
-{
-	printf("the absolute value of %d is %d", x, ABS(x));
-	return (0);
-}
+#endif
