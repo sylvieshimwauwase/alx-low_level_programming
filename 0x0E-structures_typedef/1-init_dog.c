@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * struct dog - dog's new style
+ * init_dog - dog's new style
  * @name: name of the dog
  * @age: age of the dog
  * @owner:owner of the dog
