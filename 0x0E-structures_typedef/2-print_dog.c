@@ -5,6 +5,13 @@
  * print_dog - function that prints structre of dog
  * @d:char of dog
  */
+struct dog
+{
+	char *name;
+	float age;
+	char *breed;
+};
+
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
