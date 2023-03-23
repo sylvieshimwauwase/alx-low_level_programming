@@ -3,6 +3,9 @@
 #include <stdarg.h>
 
 /**
+ * print_strings - function that prints strings
+ * @separator:string to be printed
+ * @n:number of strings
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
