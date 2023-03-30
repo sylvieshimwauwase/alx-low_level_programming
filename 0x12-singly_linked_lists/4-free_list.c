@@ -1,6 +1,9 @@
 #include "lists.h"
 #include <stdio.h>
+
 /**
+ * free_list - function that free list
+ * @head: head of node
  */
 void free_list(list_t *head)
 {
