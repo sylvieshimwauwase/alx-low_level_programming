@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_new_node - adds new node at the end
+ * add_node_end - adds new node at the end
  * @head: head of the node
  * @str: string
  *
