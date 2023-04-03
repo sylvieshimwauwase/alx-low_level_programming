@@ -6,10 +6,9 @@
 #include <string.h>
 
 /**
- * struct node - singly linked list
- * @str: string
- * @len: length off string
- * @next: points to the next node
+ * struct listint_t - lists integers
+ * @n: integer number
+ * @next: pointer pointing to next node
  */
 typedef struct listint_t
 {
