@@ -32,11 +32,10 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: can't write it %s\n", argv[2]);
 		exit(99);
 	}
-	b_read = read(file_from, buffer, BUFFER_SIZE);
-	b_write = write(file_to, buffer, b_read);
-	while (b_read > 0)
+	while ((b_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
-		if (b_read != b_write)
+	b_write = write(file_to, buffer, b_read);
+		if (b_write != b_read)
 		{
 			dprintf(STDERR_FILENO,"Error: Can't write to %s\n", argv[2]);
 			exit(99);
