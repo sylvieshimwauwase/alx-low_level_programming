@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't write ti %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: can't write it %s\n", argv[2]);
 		exit(99);
 	}
 	b_read = read(file_from, &byte, 1);
@@ -41,17 +41,12 @@ int main(int argc, char *argv[])
 	}
 	if (b_read == -1)
 	{
-		perror("read");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (close(file_from) == -1)
+	if (close(file_from) == -1 || close(file_to) == -1)
 	{
-		perror("close");
-		exit(100);
-	}
-	if (close(file_to) == -1)
-	{
-		perror("close");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", errno);
 		exit(100);
 	}
 	return (0);
