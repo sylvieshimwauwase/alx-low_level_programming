@@ -11,14 +11,16 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	FILE *file;
-	ssize_t b_write, text_len;
+	ssize_t b_write;
+	size_t text_len;
 
+	
 	if (filename == NULL)
 	{
 		return (-1);
 	}
 
-	file = fopen(filename, "a");
+	file = fopen(filename, O_WRONLY | O_APPEND);
 	if (file == NULL)
 	{
 		return (-1);
