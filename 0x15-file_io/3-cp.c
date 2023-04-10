@@ -1,6 +1,8 @@
 #include "main.h"
 #include <errno.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * main - copies contenet from one file to another
  * @argc: number of arguments
@@ -11,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int file_to, file_from, b_read, b_write;
-	char buffer[1024];
+	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
 	{
@@ -30,7 +32,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: can't write it %s\n", argv[2]);
 		exit(99);
 	}
-	b_read = read(file_from, buffer, 1024);
+	b_read = read(file_from, buffer, BUFFER_SIZE);
 	b_write = write(file_to, buffer, b_read);
 	while (b_read > 0)
 	{
