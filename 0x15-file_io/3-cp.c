@@ -1,4 +1,5 @@
 #include "main.h"
+#include <errno.h>
 
 /**
  * main - copies contenet from one file to another
