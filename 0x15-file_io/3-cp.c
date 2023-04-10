@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int file_to, file_from, b_read, b_write;
-	char byte;
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: can't write it %s\n", argv[2]);
 		exit(99);
 	}
-	b_read = read(file_from, &byte, 1);
-	b_write = write(file_to, &byte, 1);
+	b_read = read(file_from, buffer, 1024);
+	b_write = write(file_to, buffer, b_read);
 	while (b_read > 0)
 	{
-		if (b_write != 1)
+		if (b_read != b_write)
 		{
 			dprintf(STDERR_FILENO,"Error: Can't write to %s\n", argv[2]);
 			exit(99);
