@@ -24,10 +24,9 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	text_len = strlen(text_content);
-
 	if (text_content != NULL)
 	{
+		text_len = strlen(text_content);
 		b_write = write(fd, text_content, text_len);
 
 		if (b_write != text_len)
