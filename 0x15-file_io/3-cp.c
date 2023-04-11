@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write it %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((b_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
