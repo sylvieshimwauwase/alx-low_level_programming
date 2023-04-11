@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: file_from file_to\n");
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
