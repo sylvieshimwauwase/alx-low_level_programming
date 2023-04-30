@@ -14,7 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 	{
-		exit(98);
+		return (count);
 	}
 	current = head;
 
@@ -26,7 +26,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (current <= current->next)
 		{
 			printf("-> [%p] %d\n", (void *)current->next, current->next->n);
-			exit(98);
+			printf("-> [%p] %d\n", (void *)current->next->next, current->next->next->n);
 		}
 		current = current->next;
 	}
