@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at _index - deleting node at any index in linked list
+ * delete_dnodeint_at_index - deleting node at any index in linked list
  * @head: head of linked list
  * @index: index of the node
  *
- * Return: -1 if failed, 1 if succeeded 
+ * Return: -1 if failed, 1 if succeeded
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
