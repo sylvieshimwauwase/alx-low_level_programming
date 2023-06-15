@@ -1,6 +1,11 @@
 #include "lists.h"
 
 /**
+ * add_dnodeint - adding node at the beginning
+ * @head: head of node
+ * @n: integer number
+ *
+ * Return: inserted node, 0 if failed
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
