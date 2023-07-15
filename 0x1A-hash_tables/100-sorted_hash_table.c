@@ -37,16 +37,58 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 	return (ht);
 }
+/**
+ * shash_table_set - Inserts a key/value pair in the sorted hash table
+ * @ht: The hash table
+ * @key: The key string
+ * @value: The value corresponding to the key
+ *
+ * Return: 1 on success, 0 on failure
+ */
+
+int shash_table_set(shash_table_t *ht, const char *key, const char *value)
+{
+	unsigned long int index = 0;
+	shash_node_t *node = NULL, *cur = NULL;
+
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
+
+	index = key_index((unsigned char *)key, ht->size);
+	cur = ht->array[index];
+
+	while (cur != NULL)
+	{
+		if (strcmp(cur->key, key) == 0)
+		{
+			free(cur->value);
+			cur->value = strdup(value);
+			return (1);
+		}
+		cur = cur->next;
+	}
+	node = malloc(sizeof(shash_node_t));
+	if (node == NULL)
+		return (0);
+
+	node->key = strdup(key);
+	node->value = strdup(value);
+	node->next = ht->array[index];
+	ht->array[index] = node;
+	insert_sorted_node(ht, node);
+
+	return (1);
+}
 
 /**
- * shash_table_set - inserts key/value pair in sorted hash table
+ * shash_table_get - inserts key/value pair in sorted hash table
  * @ht: the hash table
  * @key: teh string key
  * @value: value corresponding to the key
  *
  * Return: 1 on success, 0 on failure
  */
-int shash_table_set(shash_table_t *ht, const char *key, const char *value)
+int shash_table_get(shash_table_t *ht, const char *key, const char *value)
 {
 	 unsigned long int index = 0;
 	 shash_node_t *cur = NULL;
