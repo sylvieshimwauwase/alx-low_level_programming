@@ -1,0 +1,3 @@
+school: main.cpp utils.cpp
+	g++ -o $@ $^
+all: school

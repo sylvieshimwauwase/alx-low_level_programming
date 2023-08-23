@@ -1,0 +1,10 @@
+CC = gcc
+SRC = main.c utils.c
+EXECUTABLE = school
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(SRC)
+	$(CC) -o $@ $^
+
+.PHONY: all
