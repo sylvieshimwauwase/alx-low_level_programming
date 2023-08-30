@@ -1,10 +1,4 @@
 CC = gcc
-SRC = main.c utils.c
-EXECUTABLE = school
-
-all: $(EXECUTABLE)
-
-$(EXECUTABLE): $(SRC)
-	$(CC) -o $@ $^
-
-.PHONY: all
+SRC = main.c school.c
+all: ${SRC}
+	${CC} ${SRC} -o school
