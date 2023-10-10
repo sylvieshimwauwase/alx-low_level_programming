@@ -3,6 +3,10 @@
 
 /**
  * jump_search - performing jump search algorithm
+ * @array: array of elements to search from
+ * @size: size of array
+ * @value: value of array
+ * Return: returns -1 on sucess
  */
 int jump_search(int *array, size_t size, int value)
 {
@@ -22,7 +26,7 @@ int jump_search(int *array, size_t size, int value)
 
 		if (curr >= size)
 		{
-			curr = size -1;
+			curr = size - 1;
 
 		}
 
@@ -38,10 +42,13 @@ int jump_search(int *array, size_t size, int value)
 
 	for (i = prev; i <= curr && i < size; i++)
 	{
-		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
-		if (array[i] == value)
+		if (i < size)
 		{
+			printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+			if (array[i] == value)
+			{
 			return (i);
+			}
 		}
 	}
 
